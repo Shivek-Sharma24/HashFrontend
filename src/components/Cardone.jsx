@@ -21,9 +21,12 @@ const Cardone = () => {
       try {
         setloading(true);
         setTimeout(async () => {
-          let res = await axios.post("http://localhost:4000/generate", {
-            ...inputs,
-          });
+          let res = await axios.post(
+            "https://hash-backend.vercel.app/generate",
+            {
+              ...inputs,
+            }
+          );
           setresponse(res.data);
           console.log(res.data);
           setInputs({ ...inputs, hashPassword: "", Saltval: 10 });

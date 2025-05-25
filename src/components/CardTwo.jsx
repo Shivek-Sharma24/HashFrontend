@@ -22,9 +22,12 @@ const CardTwo = () => {
       try {
         setloading(true);
         setTimeout(async () => {
-          let res = await axios.post("http://localhost:4000/compare", {
-            ...inputData,
-          });
+          let res = await axios.post(
+            "https://hash-backend.vercel.app/compare",
+            {
+              ...inputData,
+            }
+          );
 
           setresponse(res.data.message);
           setloading(false);
